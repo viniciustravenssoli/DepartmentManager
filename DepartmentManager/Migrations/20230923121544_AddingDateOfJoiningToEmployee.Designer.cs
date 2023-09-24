@@ -3,6 +3,7 @@ using System;
 using DepartmentManager.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DepartmentManager.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230923121544_AddingDateOfJoiningToEmployee")]
+    partial class AddingDateOfJoiningToEmployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.20");
@@ -55,9 +57,6 @@ namespace DepartmentManager.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Salario")
-                        .HasColumnType("REAL");
-
-                    b.Property<double>("SalarioAnual")
                         .HasColumnType("REAL");
 
                     b.HasKey("Id");

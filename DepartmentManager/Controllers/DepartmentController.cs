@@ -53,23 +53,30 @@ namespace DepartmentManager.Controllers
         [HttpDelete]
         public IActionResult DeleteById([FromRoute] int id)
         {
-            var departament =
-                _context.Departments.Find(id);
-            if (departament != null)
+            var departament = _context.Departments.FirstOrDefault(x => x.Id == id);
+
+            if (departament == null)
             {
-                _context.Departments.Remove(departament);
-                _context.SaveChanges();
-                return Ok(departament);
+                return NotFound();
             }
-            return NotFound();
+
+            var employeeQntd = _context.Employees.Count(x => x.DepartmentId == id);
+
+            if (employeeQntd > 0)
+            {
+                return BadRequest("Ainda possui funcionarios nesse departamento");
+            }
+            _context.Departments.Remove(departament);
+            _context.SaveChanges();
+            return Ok(departament);
         }
 
         [Route("find/{id}")]
         [HttpGet]
         public IActionResult FindById([FromRoute] int id)
         {
-            var departament = _context.Departments.Find(id);
-            
+            var departament = _context.Departments.FirstOrDefault(x => x.Id == id);
+
             return departament != null ? Ok(departament) : NotFound();
         }
     }
