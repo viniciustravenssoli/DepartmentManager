@@ -140,8 +140,7 @@ namespace DepartmentManager.Controllers
         [HttpDelete]
         public IActionResult DeleteById([FromRoute] int id)
         {
-            var employee =
-                _context.Employees.Find(id);
+            var employee = _context.Employees.FirstOrDefault(x => x.Id == id);
             if (employee != null)
             {
                 _context.Employees.Remove(employee);
@@ -155,7 +154,7 @@ namespace DepartmentManager.Controllers
         [HttpGet]
         public IActionResult FindById([FromRoute] int id)
         {
-            var employee = _context.Employees.Find(id);
+            var employee = _context.Employees.FirstOrDefault(x => x.Id == id);
 
             return employee != null ? Ok(employee) : NotFound();
         }

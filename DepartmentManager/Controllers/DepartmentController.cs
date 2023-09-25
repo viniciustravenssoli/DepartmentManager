@@ -32,8 +32,7 @@ namespace DepartmentManager.Controllers
         [Route("get-all")]
         public IActionResult GetAll()
         {
-            var departaments =
-                _context.Departments.ToList();
+            var departaments = _context.Departments.ToList();
 
             if (departaments.Count == 0) return NotFound();
 
