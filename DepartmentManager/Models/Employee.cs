@@ -9,7 +9,9 @@ namespace DepartmentManager.Models
     {
         public int Id { get; set;}
         public string Nome { get; set;}
-        public int CPF { get; set;}
+
+        [CpfEmUso] 
+        public string CPF { get; set;}
         public double Salario { get; set; }
         public double SalarioAnual { get; set; }
         public DateTime DataDeEntrada { get; set; }
