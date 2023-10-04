@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using DepartmentManager.Data;
 using DepartmentManager.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
+using SQLitePCL;
 
 namespace DepartmentManager.Controllers
 {
@@ -37,6 +41,16 @@ namespace DepartmentManager.Controllers
                 {
                     return BadRequest($"O departamento {department.DepartamentName} atingiu o seu limite maximo de {department.EmployeeLimit} funcionários.");
                 }
+                
+                 var idade = CalcularIdade(employee.DataNascimento);
+                
+                if (idade < 18){
+
+                    
+                    return BadRequest ("Funcionário com menos de 18 anos");
+                }
+
+                    return Created("Employee criado com sucesso", employee);
 
                 employee.SalarioAnual = employee.Salario * 12;
 
@@ -52,6 +66,8 @@ namespace DepartmentManager.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+    
 
         [HttpGet]
         [Route("get-all")]
@@ -178,6 +194,21 @@ namespace DepartmentManager.Controllers
             }
             return yearsOfWork;
         }
+
+         public static int CalcularIdade(DateTime dataNascimento)
+            {
+                 DateTime dataAtual = DateTime.Today;
+                 int idade = dataAtual.Year - dataNascimento.Year;
+                  return idade;
+            }
+
+        
+
+
+
+
+        
+        
     }
 }
 

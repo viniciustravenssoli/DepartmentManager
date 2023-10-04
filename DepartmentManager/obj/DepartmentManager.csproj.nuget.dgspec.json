@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\DepartmentManager.csproj": {}
+    "C:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\DepartmentManager.csproj": {}
   },
   "projects": {
-    "c:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\DepartmentManager.csproj": {
+    "C:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\DepartmentManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\DepartmentManager.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\DepartmentManager.csproj",
         "projectName": "DepartmentManager",
-        "projectPath": "c:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\DepartmentManager.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\DepartmentManager.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Trabalho\\DepartmentManager\\DepartmentManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

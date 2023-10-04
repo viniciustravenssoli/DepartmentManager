@@ -14,6 +14,7 @@ namespace DepartmentManager.Models
         public string CPF { get; set;}
         public double Salario { get; set; }
         public double SalarioAnual { get; set; }
+         public DateTime DataNascimento { get; set; }
         public DateTime DataDeEntrada { get; set; }
         public int DepartmentId { get; set; } 
         public Department Department { get; set; }
