@@ -20,10 +20,10 @@ public class CpfEmUso : ValidationAttribute
                 
             if (employee == null)
             {
-                //Caso de sucesso
+               
                 return ValidationResult.Success;
             }
-            //Caso de erro
+            
             return new ValidationResult("O CPF do funcionário já está em uso!");
         }
     }

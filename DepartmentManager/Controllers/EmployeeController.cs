@@ -50,8 +50,6 @@ namespace DepartmentManager.Controllers
                     return BadRequest ("Funcionário com menos de 18 anos");
                 }
 
-                    return Created("Employee criado com sucesso", employee);
-
                 employee.SalarioAnual = employee.Salario * 12;
 
                 employee.Department = department;
