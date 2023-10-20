@@ -7,6 +7,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder
+            .AllowAnyOrigin() // Aceitar requisições de qualquer origem
+            .AllowAnyMethod() // Aceitar todos os métodos HTTP (GET, POST, PUT, DELETE, etc.)
+            .AllowAnyHeader(); // Aceitar todos os cabeçalhos HTTP
+    });
+});
+
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
 
 builder.Services.AddControllers();
@@ -22,6 +33,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(); 
 
 app.UseHttpsRedirection();
 
