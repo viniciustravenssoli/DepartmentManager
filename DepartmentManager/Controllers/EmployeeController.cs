@@ -41,13 +41,14 @@ namespace DepartmentManager.Controllers
                 {
                     return BadRequest($"O departamento {department.DepartamentName} atingiu o seu limite maximo de {department.EmployeeLimit} funcionários.");
                 }
-                
-                 var idade = CalcularIdade(employee.DataNascimento);
-                
-                if (idade < 18){
 
-                    
-                    return BadRequest ("Funcionário com menos de 18 anos");
+                var idade = CalcularIdade(employee.DataNascimento);
+
+                if (idade < 18)
+                {
+
+
+                    return BadRequest("Funcionário com menos de 18 anos");
                 }
 
                 employee.SalarioAnual = employee.Salario * 12;
@@ -65,14 +66,13 @@ namespace DepartmentManager.Controllers
             }
         }
 
-    
+
 
         [HttpGet]
         [Route("get-all")]
         public IActionResult GetAll()
         {
-            var employees =
-                _context.Employees.ToList();
+            var employees = _context.Employees.Include(x => x.Department).ToList();
 
             if (employees.Count == 0) return NotFound();
 
@@ -193,20 +193,20 @@ namespace DepartmentManager.Controllers
             return yearsOfWork;
         }
 
-         public static int CalcularIdade(DateTime dataNascimento)
-            {
-                 DateTime dataAtual = DateTime.Today;
-                 int idade = dataAtual.Year - dataNascimento.Year;
-                  return idade;
-            }
-
-        
+        public static int CalcularIdade(DateTime dataNascimento)
+        {
+            DateTime dataAtual = DateTime.Today;
+            int idade = dataAtual.Year - dataNascimento.Year;
+            return idade;
+        }
 
 
 
 
-        
-        
+
+
+
+
     }
 }
 
