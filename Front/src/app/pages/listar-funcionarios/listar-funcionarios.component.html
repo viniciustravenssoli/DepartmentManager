@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>CPF</th>
+      <th>Data de Entrada</th>
+      <th>Data de Nascimento</th>
+      <th>Nome</th>
+      <th>Salário</th>
+      <th>Salário Anual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.cpf }}</td>
+      <td>{{ employee.dataDeEntrada | date:'dd/MM/yyyy' }}</td>
+      <td>{{ employee.dataNascimento | date:'dd/MM/yyyy' }}</td>
+      <td>{{ employee.nome }}</td>
+      <td>{{ employee.salario | currency:'BRL' }}</td>
+      <td>{{ employee.salarioAnual | currency:'BRL' }}</td>
+    </tr>
+  </tbody>
+</table>
