@@ -18,6 +18,6 @@ namespace DepartmentManager.Models
         public int Idade { get; set; }
         public DateTime DataDeEntrada { get; set; }
         public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public Department? Department { get; set; }
     }
 }

@@ -4,8 +4,15 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <!--The content below is only a placeholder and can be replaced.-->
-    <app-listar-funcionarios></app-listar-funcionarios>
-    <router-outlet></router-outlet>
+
+    <a routerLink="/pages/funcionario/listar"> Listar Funcionarios</a>
+    <a routerLink="/pages/funcionario/cadastrar"> Cadastrar Funcionarios</a>
+
+    <div>
+      <router-outlet>
+        <!-- Mostrar os componentes selecionados -->
+      </router-outlet>
+    </div>
   `,
   styles: []
 })

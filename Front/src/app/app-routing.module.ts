@@ -1,7 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastrarFuncionarioComponent } from './pages/cadastrar-funcionario/cadastrar-funcionario.component';
+import { ListarFuncionariosComponent } from './pages/listar-funcionarios/listar-funcionarios.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: "pages/funcionario/cadastrar",
+    component: CadastrarFuncionarioComponent,
+  },
+  {
+    path: "pages/funcionario/cadastrar/:id",
+    component: CadastrarFuncionarioComponent,
+  },
+  {
+    path: "pages/funcionario/listar",
+    component: ListarFuncionariosComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
