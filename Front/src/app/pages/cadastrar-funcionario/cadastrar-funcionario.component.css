@@ -1,14 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
+/* Componente Angular */
 .cadastrar-funcionario {
     background-color: #f5f5f5;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 20px;
     width: 300px;
+    text-align: center;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza verticalmente */
 }
 
 .cadastrar-funcionario h2 {

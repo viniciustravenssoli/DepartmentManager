@@ -7,6 +7,7 @@ namespace DepartmentManager.Models
 {
     public class Employee
     {
+
         public int Id { get; set; }
         public string Nome { get; set; }
 
@@ -19,5 +20,12 @@ namespace DepartmentManager.Models
         public DateTime DataDeEntrada { get; set; }
         public int DepartmentId { get; set; }
         public Department? Department { get; set; }
+
+        public Employee()
+        {
+            // Inicialize o SalarioAnual no construtor
+            SalarioAnual = Salario * 12;
+        }
     }
+
 }

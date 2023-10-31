@@ -145,6 +145,8 @@ namespace DepartmentManager.Controllers
         [Route("update")]
         public IActionResult Update([FromBody] Employee employee)
         {
+            employee.SalarioAnual = employee.Salario * 12;
+
             _context.Employees.Update(employee);
             _context.SaveChanges();
             return Ok(employee);

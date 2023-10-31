@@ -12,11 +12,20 @@
   <tbody>
     <tr *ngFor="let employee of employees">
       <td>{{ employee.cpf }}</td>
-      <td>{{ employee.dataDeEntrada | date:'dd/MM/yyyy' }}</td>
-      <td>{{ employee.dataNascimento | date:'dd/MM/yyyy' }}</td>
+      <td>{{ employee.dataDeEntrada | date : "dd/MM/yyyy" }}</td>
+      <td>{{ employee.dataNascimento | date : "dd/MM/yyyy" }}</td>
       <td>{{ employee.nome }}</td>
-      <td>{{ employee.salario | currency:'BRL' }}</td>
-      <td>{{ employee.salarioAnual | currency:'BRL' }}</td>
+      <td>{{ employee.salario | currency : "BRL" }}</td>
+      <td>{{ employee.salarioAnual | currency : "BRL" }}</td>
+      <th>Ações</th>
+      <td>
+        <a href="pages/funcionario/update/{{ employee.id }}" class="edit">
+          <i class="material-icons"> edit </i>
+        </a>
+        <a href="pages/funcionario/delete/{{ employee.id }}" class="delete">
+          <i class="material-icons"> delete </i>
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
