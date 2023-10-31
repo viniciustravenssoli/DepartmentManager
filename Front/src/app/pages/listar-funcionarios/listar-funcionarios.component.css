@@ -34,3 +34,36 @@
 .table tbody tr:hover {
   background-color: #ccc;
 }
+
+.edit, .delete {
+  background-color: #337ab7; /* Cor de fundo para botões de edição */
+  color: #fff; /* Cor do texto dos botões */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 5px; /* Espaçamento entre os botões */
+  border-radius: 4px; /* Cantos arredondados */
+  max-width: 120px; /* Largura máxima */
+  max-height: 40px; /* Altura máxima */
+  text-overflow: ellipsis; /* Adicione "..." se o texto for muito longo */
+  white-space: nowrap; /* Evite que o texto quebre em várias linhas */
+  overflow: hidden; /* Oculte o texto que não cabe */
+}
+
+.delete {
+  background-color: #d9534f; /* Cor de fundo para botões de exclusão */
+}
+
+/* Estilização do ícone dentro dos botões */
+.edit i, .delete i {
+  margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Estilização para realçar os botões ao passar o mouse sobre eles */
+.edit:hover, .delete:hover {
+  background-color: #235a9f; /* Cor de fundo alterada no hover para o botão de edição */
+}
+
+.delete:hover {
+  background-color: #c9302c; /* Cor de fundo alterada no hover para o botão de exclusão */
+}

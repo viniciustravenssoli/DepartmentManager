@@ -12,15 +12,28 @@ export class ListarFuncionariosComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  apiUrl = 'https://localhost:7047/api/employee/'
+  baseUrl = 'https://localhost:7047/api/employee/'
 
   ngOnInit(): void {
-    const url = this.apiUrl + 'get-all';
+    const url = this.baseUrl + 'get-all';
     this.http.get<Employee[]>(url)
       .subscribe({
         next: (employees) => {
           console.log(employees);
           this.employees = employees;
+        },
+        error: (erro) => {
+          console.log(erro);
+        }
+      });
+  }
+
+  delete(id: number): void {
+    const url = this.baseUrl + `delete/${id}`
+    this.http.delete<Employee>(url)
+      .subscribe({
+        next: (employee) => {
+          this.ngOnInit()
         },
         error: (erro) => {
           console.log(erro);

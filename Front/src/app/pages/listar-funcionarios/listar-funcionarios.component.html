@@ -20,11 +20,11 @@
       <th>Ações</th>
       <td>
         <a href="pages/funcionario/update/{{ employee.id }}" class="edit">
-          <i class="material-icons"> edit </i>
+          <i> Editar </i>
         </a>
-        <a href="pages/funcionario/delete/{{ employee.id }}" class="delete">
-          <i class="material-icons"> delete </i>
-        </a>
+        <button class="delete" (click)="delete(employee.id)">
+          <i> Deletar </i>
+        </button>
       </td>
     </tr>
   </tbody>
