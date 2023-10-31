@@ -30,6 +30,8 @@ export class ListarFuncionariosComponent implements OnInit {
 
   delete(id: number): void {
     const url = this.baseUrl + `delete/${id}`
+    const confirmarExclusao = window.confirm("Voce tem certeza que deseja deletar")
+    if(confirmarExclusao){
     this.http.delete<Employee>(url)
       .subscribe({
         next: (employee) => {
@@ -39,6 +41,7 @@ export class ListarFuncionariosComponent implements OnInit {
           console.log(erro);
         }
       });
+    }
   }
 
 }
