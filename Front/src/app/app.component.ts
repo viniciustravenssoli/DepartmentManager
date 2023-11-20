@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 
     <a routerLink="/pages/funcionario/listar"> Listar Funcionarios</a>
     <a routerLink="/pages/funcionario/cadastrar"> Cadastrar Funcionarios</a>
+    <a routerLink="/pages/departmanet/cadastrar"> Cadastrar Departamentos</a>
+    <a routerLink="/pages/departmanet/listar"> Listar Departamentos</a>
+
 
     <div>
       <router-outlet>

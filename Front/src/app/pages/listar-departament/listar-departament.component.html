@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome Departamento</th>
+        <th>Limete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let departament of departaments">
+        <td>{{ departament.id }}</td>
+        <td>{{ departament.departamentName}}</td>
+        <td>{{ departament.employeeLimit }}</td>
+        <th>Ações</th>
+        <td>
+          <a href="pages/funcionario/update/{{ departament.id }}" class="edit">
+            <i> Editar </i>
+          </a>
+          <button class="delete" (click)="delete(departament.id)">
+            <i> Deletar </i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

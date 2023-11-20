@@ -1,0 +1,25 @@
+<div class="cadastrar-departament">
+
+    <h2>Cadastrar Departamento</h2>
+
+    <form (submit)="cadastrar()">
+
+        <div class="form-group">
+            <label for="Id">Id:</label>
+            <input type="text" id="nome" [(ngModel)]="id" name="id" required>
+        </div>
+
+        <div class="form-group">
+            <label for="departamentName">Nome Departamento:</label>
+            <input type="text" id="nome" [(ngModel)]="departamentName" name="departamentName" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="employeeLimit">Limite Funcionários:</label>
+            <input type="number" id="employeeLimit" [(ngModel)]="employeeLimit" name="employeeLimit" required>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</div>
