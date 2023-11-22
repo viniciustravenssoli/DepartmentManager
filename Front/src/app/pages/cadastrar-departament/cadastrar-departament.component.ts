@@ -41,10 +41,10 @@ export class CadastrarDepartamentComponent implements OnInit {
 
             }
             
-            this.http.post<Department>("https://localhost:7047/api/employee/create", departamento)
+            this.http.post<Department>("https://localhost:7047/api/departament/create", departamento)
             .subscribe({
             next: (departamento) => {
-            this.snackBar.open("Produto cadastrado com sucesso!",{
+            this.snackBar.open("Departamento cadastrado com sucesso!",{
               duration:1500,
               horizontalPosition: "right",
               verticalPosition: "top",
