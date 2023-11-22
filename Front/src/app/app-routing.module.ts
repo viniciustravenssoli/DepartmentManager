@@ -30,6 +30,11 @@ const routes: Routes = [
     component: ListarDepartamentComponent,
   },
 
+  {
+    path: "pages/departament/editar",
+    component: ListarDepartamentComponent,
+  },
+
 ];
 
 @NgModule({

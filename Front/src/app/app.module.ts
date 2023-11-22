@@ -18,7 +18,7 @@ import { ListarDepartamentComponent } from "./pages/listar-departament/listar-de
     CadastrarFuncionarioComponent,
     EditarFuncionarioComponent,
     CadastrarDepartamentComponent,
-    ListarDepartamentComponent
+    
   
   ],
   //Bibliotecas externas da aplicação
@@ -31,4 +31,5 @@ import { ListarDepartamentComponent } from "./pages/listar-departament/listar-de
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
