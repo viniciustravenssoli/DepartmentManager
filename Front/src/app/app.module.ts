@@ -18,8 +18,7 @@ import { ListarDepartamentComponent } from "./pages/listar-departament/listar-de
     CadastrarFuncionarioComponent,
     EditarFuncionarioComponent,
     CadastrarDepartamentComponent,
-    
-  
+    ListarDepartamentComponent
   ],
   //Bibliotecas externas da aplicação
   imports: [

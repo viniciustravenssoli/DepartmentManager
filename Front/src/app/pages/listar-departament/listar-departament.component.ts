@@ -9,7 +9,6 @@ import { Department } from 'src/app/Models/Department';
 })
 
 export class ListarDepartamentComponent implements OnInit {
-  [x: string]: any;
 
   colunasTabela: string[] = [
     "Id",
@@ -43,11 +42,6 @@ export class ListarDepartamentComponent implements OnInit {
       .subscribe({
         next: (departament) => {
           this.ngOnInit()
-          this.snackBar.open("Departamento cadastrado com sucesso!",{
-            duration:1500,
-            horizontalPosition: "right",
-            verticalPosition: "top",
-          })
         },
         error: (erro) => {
           console.log(erro);

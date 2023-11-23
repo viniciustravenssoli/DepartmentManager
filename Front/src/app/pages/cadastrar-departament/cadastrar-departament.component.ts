@@ -10,57 +10,32 @@ import { Employee } from 'src/app/Models/Employee';
 })
 
 export class CadastrarDepartamentComponent implements OnInit {
-  [x: string]: any;
 
-    funcionarios : Employee[] = []
+  id!: number;
+  departamentName!: string;
+  employeeLimit!: number;
 
-    id! : number;
-    departamentName! : string;
-    employeeLimit! : number;
+  constructor(private http: HttpClient) { }
 
-    constructor(private http: HttpClient) { }
+  ngOnInit(): void { }
 
-    ngOnInit(): void {
-            this.http.get<Employee[]>("https://localhost:7047/api/employee/get-all")
-            .subscribe({
-              next : (funcionarios) => {
-                console.log(funcionarios);
-                this.funcionarios = funcionarios;
-              },
-              error : (erro) => {
-                console.log(erro);
-              }
-            })
-          }
+  cadastrar(): void {
+    let departamento: Department = {
+      id: this.id,
+      departamentName: this.departamentName,
+      employeeLimit: this.employeeLimit
 
-        cadastrar() : void {
-            let departamento : Department = {
-            id: this.id,
-            departamentName: this.departamentName,
-            employeeLimit: this.employeeLimit
+    }
 
-            }
-            
-            this.http.post<Department>("https://localhost:7047/api/departament/create", departamento)
-            .subscribe({
-            next: (departamento) => {
-            this.snackBar.open("Departamento cadastrado com sucesso!",{
-              duration:1500,
-              horizontalPosition: "right",
-              verticalPosition: "top",
-            })
-            },
+    this.http.post<Department>("https://localhost:7047/api/departament/create", departamento)
+      .subscribe({
+        next: (departamento) => {
+        },
 
-            error : (erro) => {
-            console.log(erro);
-            }
-        })
+        error: (erro) => {
+          console.log(erro);
+        }
+      })
   }
-
-    
-
-
-
-          
 
 }
