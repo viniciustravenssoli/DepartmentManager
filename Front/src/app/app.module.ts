@@ -10,6 +10,7 @@ import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-fu
 import { Router } from "@angular/router";
 import { CadastrarDepartamentComponent } from "./pages/cadastrar-departament/cadastrar-departament.component";
 import { ListarDepartamentComponent } from "./pages/listar-departament/listar-departament.component";
+import { EditarDepartamentComponent } from "./pages/editar-departament/editar-departament.component";
 @NgModule({
   //Componentes da aplicação
   declarations: [
@@ -18,7 +19,8 @@ import { ListarDepartamentComponent } from "./pages/listar-departament/listar-de
     CadastrarFuncionarioComponent,
     EditarFuncionarioComponent,
     CadastrarDepartamentComponent,
-    ListarDepartamentComponent
+    ListarDepartamentComponent,
+    EditarDepartamentComponent
   ],
   //Bibliotecas externas da aplicação
   imports: [

@@ -5,6 +5,7 @@ import { ListarFuncionariosComponent } from './pages/listar-funcionarios/listar-
 import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-funcionario.component';
 import { CadastrarDepartamentComponent } from "./pages/cadastrar-departament/cadastrar-departament.component";
 import { ListarDepartamentComponent } from './pages/listar-departament/listar-departament.component';
+import { EditarDepartamentComponent } from './pages/editar-departament/editar-departament.component';
 
 const routes: Routes = [
   {
@@ -31,8 +32,8 @@ const routes: Routes = [
   },
 
   {
-    path: "pages/departament/editar",
-    component: ListarDepartamentComponent,
+    path: "pages/departament/update/:id",
+    component: EditarDepartamentComponent,
   },
 
 ];
