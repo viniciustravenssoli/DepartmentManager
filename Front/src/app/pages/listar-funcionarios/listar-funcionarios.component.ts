@@ -10,6 +10,8 @@ import { Employee } from 'src/app/Models/Employee';
 export class ListarFuncionariosComponent implements OnInit {
   employees !: Employee[];
 
+  displayedColumns: string[] = ['cpf', 'dataDeEntrada', 'dataNascimento', 'nome', 'salario', 'salarioAnual', 'acoes'];
+
   constructor(private http: HttpClient) { }
 
   baseUrl = 'https://localhost:7047/api/employee/'

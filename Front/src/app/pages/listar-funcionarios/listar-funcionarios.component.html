@@ -1,31 +1,46 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>CPF</th>
-      <th>Data de Entrada</th>
-      <th>Data de Nascimento</th>
-      <th>Nome</th>
-      <th>Salário</th>
-      <th>Salário Anual</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let employee of employees">
-      <td>{{ employee.cpf }}</td>
-      <td>{{ employee.dataDeEntrada | date : "dd/MM/yyyy" }}</td>
-      <td>{{ employee.dataNascimento | date : "dd/MM/yyyy" }}</td>
-      <td>{{ employee.nome }}</td>
-      <td>{{ employee.salario | currency : "BRL" }}</td>
-      <td>{{ employee.salarioAnual | currency : "BRL" }}</td>
-      <th>Ações</th>
-      <td>
-        <a href="pages/funcionario/update/{{ employee.id }}" class="edit">
-          <i> Editar </i>
-        </a>
-        <button class="delete" (click)="delete(employee.id)">
-          <i> Deletar </i>
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<mat-table class="table" [dataSource]="employees">
+  <ng-container matColumnDef="cpf">
+    <mat-header-cell *matHeaderCellDef>CPF</mat-header-cell>
+    <mat-cell *matCellDef="let employee">{{ employee.cpf }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="dataDeEntrada">
+    <mat-header-cell *matHeaderCellDef>Data de Entrada</mat-header-cell>
+    <mat-cell *matCellDef="let employee">{{ employee.dataDeEntrada | date: 'dd/MM/yyyy' }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="dataNascimento">
+    <mat-header-cell *matHeaderCellDef>Data de Nascimento</mat-header-cell>
+    <mat-cell *matCellDef="let employee">{{ employee.dataNascimento | date: 'dd/MM/yyyy' }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nome">
+    <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+    <mat-cell *matCellDef="let employee">{{ employee.nome }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="salario">
+    <mat-header-cell *matHeaderCellDef>Salário</mat-header-cell>
+    <mat-cell *matCellDef="let employee">{{ employee.salario | currency: 'BRL' }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="salarioAnual">
+    <mat-header-cell *matHeaderCellDef>Salário Anual</mat-header-cell>
+    <mat-cell *matCellDef="let employee">{{ employee.salarioAnual | currency: 'BRL' }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acoes">
+    <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+    <mat-cell *matCellDef="let employee">
+      <a [routerLink]="'/pages/funcionario/update/' + employee.id" class="edit">
+        <i> Editar </i>
+      </a>
+      <button class="delete" (click)="delete(employee.id)">
+        <i> Deletar </i>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

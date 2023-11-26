@@ -7,10 +7,23 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-funcionario.component';
-import { Router } from "@angular/router";
 import { CadastrarDepartamentComponent } from "./pages/cadastrar-departament/cadastrar-departament.component";
 import { ListarDepartamentComponent } from "./pages/listar-departament/listar-departament.component";
 import { EditarDepartamentComponent } from "./pages/editar-departament/editar-departament.component";
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+
+//material
+
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+
+
 @NgModule({
   //Componentes da aplicação
   declarations: [
@@ -20,14 +33,21 @@ import { EditarDepartamentComponent } from "./pages/editar-departament/editar-de
     EditarFuncionarioComponent,
     CadastrarDepartamentComponent,
     ListarDepartamentComponent,
-    EditarDepartamentComponent
+    EditarDepartamentComponent,
   ],
   //Bibliotecas externas da aplicação
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, 
+    FormsModule,
+    NoopAnimationsModule, 
+    MatButtonModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,53 +1,61 @@
-/* Estilizando a seção de edição de funcionário */
 .editar-funcionario {
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  /* Estilizando o título "Editar Funcionário" */
-  .editar-funcionario h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilizando o formulário e os campos de entrada */
-  .editar-funcionario form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  /* Estilizando o botão "Editar" */
-  button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+h2 {
+  color: #007bff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.mat-form-field-label {
+  color: #007bff;
+}
+
+.mat-input-element {
+  color: #333;
+}
+
+.mat-form-field[disabled] {
+  background-color: #f5f5f5;
+}
+
+.mat-form-field-disabled .mat-form-field-label {
+  color: #777;
+}
+
+.mat-form-field-disabled .mat-input-element {
+  color: #777;
+}
+
+button[type="submit"]:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
