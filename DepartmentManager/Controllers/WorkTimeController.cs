@@ -21,7 +21,8 @@ namespace DepartmentManager.Controllers
             _context = context;
         }
 
-        [HttpPost("/worktime")]
+        [HttpPost]
+        [Route("create")]
         public async Task<IActionResult> AddWorkTime(WorktimeDTO workTimedto)
         {
             var employee = await _context.Employees.Include(x => x.Department).FirstOrDefaultAsync(x => x.Id == workTimedto.EmployeeId);

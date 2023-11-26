@@ -1,0 +1,31 @@
+
+<div class="cadastrar-horas">
+    <h2>Adicionar Horas</h2>
+    <form (submit)="cadastrar()">
+        <div class="form-group">
+            <mat-form-field>
+                <input [(ngModel)]="entryTime" name="horarioentrada" matInput type="datetime-local" placeholder="Data de Entrada">
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <input [(ngModel)]="ExitTime" name="horariosaida" matInput type="datetime-local" placeholder="Data de Saida">
+            </mat-form-field>
+        </div>
+
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label>Selecione o Funcionario:</mat-label>
+                <mat-select id="funcionarioId" [(ngModel)]="funcionarioId" name="funcionarioId" required>
+                    <mat-option *ngFor="let funcionario of funcionarios" [value]="funcionario.id">
+                        {{ funcionario.id}} -- {{ funcionario.nome }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+    </form>
+</div>

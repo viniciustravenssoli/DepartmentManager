@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from 'src/app/Models/Employee';
 
@@ -15,8 +16,7 @@ export class EditarFuncionarioComponent implements OnInit {
   nome!: string;
   salario!: number;
 
-  constructor(private http: HttpClient,
-    private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')!
@@ -36,6 +36,7 @@ export class EditarFuncionarioComponent implements OnInit {
       .subscribe({
         next: (funcionario) => {
           this.funcionario = funcionario;
+          this.snackBar.open("Funcionario Editado com sucesso")
         },
         error: (erro) => {
           console.log(erro);

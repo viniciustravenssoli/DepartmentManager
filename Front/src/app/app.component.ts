@@ -10,6 +10,8 @@ import { Component } from '@angular/core';
         <a routerLink="/pages/funcionario/cadastrar">Cadastrar Funcionarios</a>
         <a routerLink="/pages/departmanet/cadastrar">Cadastrar Departamentos</a>
         <a routerLink="/pages/departament/listar">Listar Departamentos</a>
+        <a routerLink="/pages/ponto/cadastrar">Cadastras Horas</a>
+        <a routerLink="pages/listarhorastrabalhadas">Listar Horas Trabalhadas</a>
       </nav>
     </div>
 

@@ -33,26 +33,24 @@ namespace DepartmentManager.Controllers
 
                 if (department == null)
                 {
-                    return NotFound("Departamento Não Encontrado");
+                    return NotFound(new { error = "Departamento Não Encontrado" });
                 }
+
                 var employees = _context.Employees.Count(x => x.DepartmentId == employee.DepartmentId);
 
                 if (employees >= department.EmployeeLimit)
                 {
-                    return BadRequest($"O departamento {department.DepartamentName} atingiu o seu limite maximo de {department.EmployeeLimit} funcionários.");
+                    return BadRequest(new { error = $"O departamento {department.DepartamentName} atingiu o seu limite máximo de {department.EmployeeLimit} funcionários." });
                 }
 
                 var idade = CalcularIdade(employee.DataNascimento);
 
                 if (idade < 18)
                 {
-
-
-                    return BadRequest("Funcionário com menos de 18 anos");
+                    return BadRequest(new { error = "Funcionário com menos de 18 anos" });
                 }
 
                 employee.SalarioAnual = employee.Salario * 12;
-
                 employee.Department = department;
 
                 _context.Employees.Add(employee);
@@ -62,7 +60,7 @@ namespace DepartmentManager.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
             }
         }
 

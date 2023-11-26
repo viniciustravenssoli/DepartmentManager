@@ -38,7 +38,7 @@ export class ListarDepartamentComponent implements OnInit {
 
   delete(id: number): void {
     this.client
-    .delete<Department>("https://localhost:7047/api/departament/delete/{id}")
+    .delete<Department>(`https://localhost:7047/api/departament/delete/${id}`)
       .subscribe({
         next: (departament) => {
           this.ngOnInit()

@@ -15,6 +15,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 //material
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -22,6 +24,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { HorasCadastrarComponent } from './pages/horas-cadastrar/horas-cadastrar.component';
+import { ListarHorastrabalhasPorfuncionarioComponent } from './pages/listar-horastrabalhas-porfuncionario/listar-horastrabalhas-porfuncionario.component';
 
 
 @NgModule({
@@ -34,6 +38,8 @@ import { MatButtonModule } from '@angular/material/button';
     CadastrarDepartamentComponent,
     ListarDepartamentComponent,
     EditarDepartamentComponent,
+    HorasCadastrarComponent,
+    ListarHorastrabalhasPorfuncionarioComponent,
   ],
   //Bibliotecas externas da aplicação
   imports: [
@@ -47,7 +53,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

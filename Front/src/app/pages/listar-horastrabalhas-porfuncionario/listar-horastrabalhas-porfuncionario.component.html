@@ -1,0 +1,30 @@
+
+<div class="cadastrar-horas">
+    <h2>Buscar Horas</h2>
+    <form (submit)="buscarhoras()">
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label>Selecione o Funcionario:</mat-label>
+                <mat-select id="funcionarioId" [(ngModel)]="funcionarioId" name="funcionarioId" required>
+                    <mat-option *ngFor="let funcionario of funcionarios" [value]="funcionario.id">
+                        {{ funcionario.id}} -- {{ funcionario.nome }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <button mat-raised-button color="primary" type="submit">Buscar Horas</button>
+    </form>
+</div>
+
+
+
+<div class="form-group">
+   
+    <div class="form-group">
+        <mat-form-field>
+            <input [(ngModel)]="worktime" name="horastrabalhadas" matInput type="string" placeholder="Total Horas">
+        </mat-form-field>
+    </div>
+</div>
